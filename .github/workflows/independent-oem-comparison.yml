@@ -1,0 +1,40 @@
+name: One-off S05 public OEM comparison ($0)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: s05-independent-oem-comparison
+  cancel-in-progress: true
+
+jobs:
+  compare-public-oem:
+    name: Public OEM comparison (strictly limited)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - name: Check out public test repository only
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Show runner Python and validate source syntax
+        run: |
+          python3 --version
+          python3 - <<'PY'
+          import ast
+          for name in ["scripts/oem_smoke_test.py", "scripts/independent_oem_comparison.py"]:
+              with open(name, encoding="utf-8") as f:
+                  ast.parse(f.read(), filename=name)
+              print("Syntax OK:", name)
+          PY
+      - name: Existing four-OEM connectivity control (not discovery)
+        continue-on-error: true
+        run: python3 scripts/oem_smoke_test.py
+      - name: One independent public-OEM catalogue discovery comparison
+        run: python3 scripts/independent_oem_comparison.py
