@@ -1,0 +1,26 @@
+name: Free OEM discovery smoke test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hardware-oem-smoke-test
+  cancel-in-progress: true
+
+jobs:
+  check-oem-sources:
+    name: Read public manufacturer pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out this test repository
+        uses: actions/checkout@v4
+      - name: Show Python version
+        run: python3 --version
+      - name: Test official manufacturer pages (read-only)
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: python3 scripts/oem_smoke_test.py
