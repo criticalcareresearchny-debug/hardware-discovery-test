@@ -2,6 +2,11 @@ name: One-off S05 public OEM comparison ($0)
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - test/s05-one-off-comparison-20261116
+    paths:
+      - .github/workflows/independent-oem-comparison.yml
 
 permissions:
   contents: read
@@ -35,6 +40,6 @@ jobs:
           PY
       - name: Existing four-OEM connectivity control (not discovery)
         continue-on-error: true
-        run: python3 scripts/oem_smoke_test.py
+        run: timeout 45s python3 scripts/oem_smoke_test.py
       - name: One independent public-OEM catalogue discovery comparison
-        run: python3 scripts/independent_oem_comparison.py
+        run: timeout 225s python3 scripts/independent_oem_comparison.py
