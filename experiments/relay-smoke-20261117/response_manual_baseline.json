@@ -1,0 +1,22 @@
+{
+  "schema": "relay-smoke-v1",
+  "test_id": "SIMULATED-RELAY-20261117-01",
+  "provenance": "CHATGPT_IN_ACTIVE_CONVERSATION_NOT_AUTOMATIC_TRIGGER",
+  "verdict": "Original 3.3 V / 0.50 A source cannot reliably power the assumed 5 V pump and MCU",
+  "calculation": {
+    "pump_nominal_W": 1.5,
+    "source_max_W": 1.65,
+    "assumed_converter_efficiency": 0.85,
+    "pump_input_W_via_boost": 1.7647058823529411,
+    "pump_input_A_from_3p3V": 0.5347593582887701,
+    "note": "Pump power alone exceeds assumed 3.3 V source capacity after realistic conversion loss, before MCU and startup current."
+  },
+  "repair": "Use a separate correctly rated regulated 5 V pump supply, sized above nominal 0.30 A for measured startup/inrush and safe switching; provide a proper 3.3 V MCU rail, a suitable pump driver, and defined return/ground strategy. Alternative: select an appropriate battery/supply and independently verify peak load, converter efficiency, heat and safety.",
+  "evidence_status": "FICTIONAL_SOURCE_VALUES_AND_ASSUMED_85_PERCENT_CONVERTER_EFFICIENCY; NO_REAL_OEM_DATA",
+  "required_next_tests": [
+    "Measure pump peak/start current",
+    "Select an actual supply and driver",
+    "Verify power rails/grounds and electrical safety"
+  ],
+  "automatic_wakeup_observed": false
+}
