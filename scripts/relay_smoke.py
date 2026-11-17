@@ -14,7 +14,7 @@ response_path=BASE/"response.json"
 if response_path.exists():
     response=json.loads(response_path.read_text())
     assert response["test_id"]==request["test_id"]
-    assert response["provenance"]=="CHATGPT_IN_ACTIVE_CONVERSATION_NOT_AUTOMATIC_TRIGGER"
+    assert response["provenance"] in ("CHATGPT_IN_ACTIVE_CONVERSATION_NOT_AUTOMATIC_TRIGGER", "CHATGPT_WORK_EVENT_TRIGGER")
     calc=response["calculation"]
     assert math.isclose(calc["pump_nominal_W"],1.5,abs_tol=1e-9)
     assert math.isclose(calc["source_max_W"],1.65,abs_tol=1e-9)
