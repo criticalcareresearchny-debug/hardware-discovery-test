@@ -1,0 +1,21 @@
+{
+  "schema": "relay-smoke-v1",
+  "test_id": "SIMULATED-RELAY-20261117-01",
+  "privacy": "PUBLIC SYNTHETIC TEST — not user research",
+  "status": "NEEDS_CHATGPT_REASONING",
+  "request": {
+    "question": "A fictional benchtop fixture has a 5 V DC micro-pump with assumed 0.30 A running current, a 3.3 V microcontroller, and a source limited to 3.3 V / 0.50 A. Identify whether the available source alone is sufficient and propose a compatible external supply strategy. Explicitly distinguish assumptions from verified specifications.",
+    "constraints": [
+      "Do not assume a real OEM part or specific model.",
+      "No real-world product qualification.",
+      "No proprietary invention content."
+    ]
+  },
+  "expected_response_fields": [
+    "test_id",
+    "verdict",
+    "calculation",
+    "repair",
+    "evidence_status"
+  ]
+}
