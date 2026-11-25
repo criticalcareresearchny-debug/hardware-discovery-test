@@ -1,0 +1,73 @@
+name: Public OEM document retrieval test
+on:
+  push:
+    branches:
+      - test/public-oem-retrieval-20261124
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: public-oem-retrieval-test-20261124
+  cancel-in-progress: true
+jobs:
+  retrieve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Bounded Python public document check
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, re, time
+          from urllib.request import Request, urlopen
+          from urllib.parse import urlsplit
+          from urllib.robotparser import RobotFileParser
+          from urllib.error import HTTPError
+          from subprocess import run
+          from tempfile import TemporaryDirectory
+          from pathlib import Path
+          sources = [
+              ("Mobilint public Korean user guide", "https://docs.mobilint.com/manuals/mld-r1-ai-usb/Mobilint_MLD-R1_User_Guide_v2_KR.pdf", ["MLD-R1", "REGULUS", "LPDDR4X"]),
+              ("Bertin public adaptive optics catalogue", "https://www.bertin-technologies.com/wp-content/uploads/2024/12/adaptive-optics-catalog.pdf", ["eDM 57-15", "eDM 69-15", "eDM 97-15"]),
+              ("F&S public quickfacts", "https://www.fs-net.de/assets/download/docu/M2/FS-M2-AI_Quickfacts.pdf", ["FS-M2-AI", "LPDDR4", "V1I"]),
+          ]
+          agent = "PublicOEMResearchTest/1.0 (+https://github.com/criticalcareresearchny-debug/hardware-discovery-test)"
+          cap = 8*1024*1024
+          for name, url, terms in sources:
+              item = {"source":name, "url":url}
+              try:
+                  parts = urlsplit(url)
+                  robots_url = parts.scheme + "://" + parts.netloc + "/robots.txt"
+                  rp = RobotFileParser()
+                  try:
+                      with urlopen(Request(robots_url, headers={"User-Agent":agent}),timeout=8) as f:
+                          rp.parse(f.read(120000).decode("utf-8","replace").splitlines())
+                  except HTTPError as e:
+                      if e.code not in (404,410): raise
+                      rp.parse([])
+                  if not rp.can_fetch(agent,url):
+                      item["outcome"]="SKIPPED_ROBOTS"
+                  else:
+                      with urlopen(Request(url,headers={"User-Agent":agent,"Accept":"application/pdf"}),timeout=12) as f:
+                          data=f.read(cap+1)
+                          item.update(status=f.status,final_url=f.geturl(),content_type=f.headers.get("Content-Type",""),bytes=len(data))
+                      if len(data)>cap:
+                          item["outcome"]="SIZE_LIMIT"
+                      elif not data.startswith(b"%PDF"):
+                          item["outcome"]="NOT_PDF"
+                      else:
+                          item.update(outcome="PDF_RETRIEVED",sha256=hashlib.sha256(data).hexdigest())
+                          with TemporaryDirectory() as d:
+                              p=Path(d)/"source.pdf"
+                              p.write_bytes(data)
+                              try:
+                                  result=run(["pdftotext","-layout",str(p),"-"],capture_output=True,timeout=18,check=True)
+                                  body=re.sub(r"\\s+"," ",result.stdout.decode("utf-8","replace"))
+                                  item["public_model_token_checks"]={t:bool(re.search(re.escape(t),body,re.I)) for t in terms}
+                              except Exception as e:
+                                  item["text_extraction"]=type(e).__name__
+              except Exception as e:
+                  item.update(outcome="RETRIEVAL_FAILED",error=type(e).__name__,detail=str(e)[:180])
+              print(json.dumps(item,ensure_ascii=False),flush=True)
+              time.sleep(0.5)
+          PY
