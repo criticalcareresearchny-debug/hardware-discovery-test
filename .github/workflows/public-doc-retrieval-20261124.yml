@@ -1,0 +1,47 @@
+name: Public document retrieval
+on:
+  push:
+    branches: [public-doc-retrieval-20261124]
+    paths: ['.github/workflows/public-doc-retrieval-20261124.yml']
+permissions:
+  contents: read
+jobs:
+  retrieve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Query public bibliographic records
+        shell: bash
+        run: |
+          python - <<'PY'
+          import urllib.request, urllib.parse, concurrent.futures, json, hashlib, time, xml.etree.ElementTree as ET
+          dois = ['10.1038/s41467-026-70802-8','10.1038/s41467-026-76116-z','10.1038/s41563-026-02745-w','10.1038/s41467-026-76185-0','10.1002/adma.75027','10.1021/acsphotonics.6c01155']
+          def get(url):
+              req=urllib.request.Request(url,headers={'User-Agent':'PublicBibliographicResearch/1.0','Accept':'application/json, application/xml'})
+              with urllib.request.urlopen(req,timeout=20) as r:
+                  return r.read(8000001),r.geturl()
+          def one(doi):
+              out={'doi':doi}
+              try:
+                  url='https://www.ebi.ac.uk/europepmc/webservices/rest/search?'+urllib.parse.urlencode({'query':'DOI:'+doi,'format':'json','resultType':'core','pageSize':5})
+                  b,actual=get(url)
+                  out.update(search_url=actual,search_sha256=hashlib.sha256(b).hexdigest())
+                  records=json.loads(b)['resultList']['result']
+                  out['records']=[{k:r.get(k) for k in ['title','doi','id','source','pmcid','isOpenAccess','inPMC','authorString','firstPublicationDate']} for r in records]
+                  match=next((r for r in records if r.get('doi','').lower()==doi.lower() and r.get('isOpenAccess')=='Y' and r.get('pmcid')),None)
+                  if match:
+                      xmlurl='https://www.ebi.ac.uk/europepmc/webservices/rest/'+match['pmcid']+'/fullTextXML'
+                      try:
+                          raw,actual=get(xmlurl)
+                          root=ET.fromstring(raw)
+                          sections=[' '.join(t.itertext()).strip() for t in root.findall('.//sec/title')]
+                          out['fulltext']={'url':actual,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'section_headings':sections,'figure_count':len(root.findall('.//fig')),'table_count':len(root.findall('.//table-wrap'))}
+                      except Exception as e: out['fulltext_error']=str(e)
+              except Exception as e: out['error']=str(e)
+              return out
+          start=time.monotonic()
+          with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
+              for result in pool.map(one,dois):
+                  print(json.dumps(result,ensure_ascii=False),flush=True)
+          print(json.dumps({'elapsed_s':round(time.monotonic()-start,2),'requests':len(dois)}))
+          PY
