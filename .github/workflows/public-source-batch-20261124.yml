@@ -1,0 +1,162 @@
+name: Public source batch research
+on:
+  push:
+    branches:
+      - test/public-source-batch-20261124
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: public-source-batch-20261124
+  cancel-in-progress: true
+jobs:
+  investigate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - name: Public literature and technical document search
+        run: |
+          python3 - <<'PY'
+          import concurrent.futures as cf
+          import hashlib, json, re, time, html, threading
+          from urllib.request import Request, urlopen
+          from urllib.parse import urlencode, urlsplit, urljoin
+          from urllib.error import HTTPError
+          from urllib.robotparser import RobotFileParser
+          from xml.etree import ElementTree as ET
+          from html.parser import HTMLParser
+          
+          # Only public literature identifiers, public search phrases, and official vendor pages.
+          # No private workbook, project identifiers, research ledger, credentials, or data transfer.
+          papers = [
+              ("10.1063/5.0330667", "Al nanogranular SiO2 ITO memcapacitive reservoir Cui"),
+              ("10.1080/14686996.2026.2718043", "Feng silicon nitride oxide optoelectronic reservoir memristor"),
+              ("", "Si HfZrO2 multi regime memory photodetector Nano Energy"),
+              ("", "Rzhanov Institute Novosibirsk oxide ReRAM memristor prototype 2024"),
+              ("", "WTe2 diffusive memristor threshold switching Nanyang"),
+              ("", "MoS2 HZO dual gate selective attention transistor National University Singapore"),
+              ("", "single CMOS transistor neuromorphic neuron synapse National University Singapore"),
+              ("", "Designable van der Waals crystal artificial neuronal cell Sungkyunkwan"),
+              ("", "free space optical extreme learning machine IIT Bombay"),
+              ("", "NbOx Mott threshold tactile neuron Westlake"),
+              ("", "NRE skin printed nociception reflex electronic skin"),
+              ("10.1038/s41565-026-02149-6", "printed graphene MoS2 neuristor Northwestern"),
+              ("10.1038/s41467-026-73624-w", "magnetic tunnel junction finite difference learning neuron"),
+              ("10.1038/s41467-026-70802-8", "exchange biased nanoscale magnetic tunnel junction synapse neuron"),
+              ("10.1038/s41467-026-76116-z", "flexible optoretinomorphic organic transistor"),
+              ("10.1038/s41563-026-02745-w", "water stable crown ether supramolecular organic electrochemical transistor neuron"),
+              ("10.1002/adma.75027", "mechanochemical flexible organic artificial neuron"),
+              ("10.1038/s44460-026-00067-7", "sensor powered analogue learning diffusive drift memristor PCB"),
+              ("10.1038/s44460-026-00052-0", "hydrogel organic electrochemical transistor array neuromorphic biosignal"),
+              ("10.1038/s41467-026-71127-2", "single molecule ion channel programmable synaptic structure"),
+          ]
+          extra_queries=[
+              ("", "мемристоры резистивная память оксид институт физики полупроводников Новосибирск"),
+              ("", "二硫化钼 铁电 双栅 选择性注意 晶体管 新加坡"),
+              ("", "铌氧化物 触觉 神经元 西湖大学"),
+              ("", "인공 신경 세포 반데르발스 결정 성균관대학교"),
+          ]
+          vendors = [
+              ("Infineon radar kit manual","https://www.infineon.com/assets/row/public/documents/30/44/infineon-ug143158-kit-csk-bgt60utr11aip-xensiv-connected-sensor-kit-usermanual-en.pdf"),
+              ("Infineon HMI kit BSP","https://infineon.github.io/TARGET_KIT_PSE84_HMI/html/index.html"),
+              ("GreenWaves public code","https://github.com/GreenWaves-Technologies/tiny_denoiser_v2"),
+              ("GreenWaves CRESITT presentation","https://cresitt.com/wp-content/uploads/2023/10/02-Sem-IA-Greenwaves-Technologies_compressed.pdf"),
+              ("Himax Korean WiseEye matrix","https://www.himax.com.tw/ko/products/wiseeye-ai-sensing/wiseeye-solutions/"),
+              ("AKM Japanese release","https://www.akm.com/jp/ja/about-us/news/2026/20260512-cz3k/"),
+              ("DEEPX module","https://deepx.ai/products/dx-m1m/"),
+              ("DEEPX module ordering","https://deepx.ai/buy-now/ai-modules/"),
+              ("Synaptics technical document","https://cp.synaptics.com/cognidox/download/NR-156755-MS-APPROVED.pdf"),
+              ("TDK development kit","https://www.invensense.tdk.com/en-us/products/dk-45685"),
+              ("TDK ICM-45687","https://www.invensense.tdk.com/en-us/products/motion-tracking/6-axis/icm-45687"),
+              ("PolyU accepted manuscript index","https://ira.lib.polyu.edu.hk/handle/10397/119955?mode=full"),
+              ("RAS Russian publication","https://new.ras.ru/press-center/novye-sposoby-sozdaniya-elementov-dlya-universalnoy-kompyuternoy-pamyati-reram/"),
+              ("SKKU institutional publication","https://pure.skku.edu/en/publications/designable-van-der-waals-crystal-for-artificial-neuronal-cell-mim/"),
+          ]
+          agent="PublicDocumentResearchTest/1.0 (+https://github.com/criticalcareresearchny-debug/hardware-discovery-test)"
+          headers={"User-Agent":agent,"Accept":"application/json, application/xml, text/html, application/pdf;q=0.8, */*;q=0.5"}
+          cap=8*1024*1024
+          def get(url,limit=cap):
+              with urlopen(Request(url,headers=headers),timeout=12) as f:
+                  raw=f.read(limit+1)
+                  if len(raw)>limit:
+                      raise ValueError("size cap reached")
+                  return raw, f.geturl(), f.headers.get("Content-Type","")
+          def emit(item):
+              print(json.dumps(item,ensure_ascii=False),flush=True)
+          def crossref(item):
+              doi,phrase=item
+              row={"service":"Crossref","doi_query":doi,"query":phrase}
+              try:
+                  url="https://api.crossref.org/works/"+doi if doi else "https://api.crossref.org/works?"+urlencode({"query.bibliographic":phrase,"rows":3,"select":"DOI,title,URL,link,published,author"})
+                  raw,_,_=get(url,2_000_000)
+                  payload=json.loads(raw)["message"]
+                  records=[payload] if doi else payload.get("items",[])
+                  row["matches"]=[{"doi":x.get("DOI"),"title":" ".join(x.get("title",[]))[:280],"url":x.get("URL"),"links":[{"url":l.get("URL"),"type":l.get("content-type")} for l in x.get("link",[])[:4]],"year":x.get("published",{}).get("date-parts"),"first_author":(x.get("author") or [{}])[0].get("family")} for x in records]
+                  row["status"]="OK"
+              except Exception as e:
+                  row.update(status="FAILED",error=str(e)[:160])
+              emit(row)
+              time.sleep(.35)
+              return row
+          def epmc(item):
+              doi,phrase=item
+              row={"service":"EuropePMC","doi_query":doi,"query":phrase}
+              try:
+                  q='DOI:"'+doi+'"' if doi else phrase
+                  url="https://www.ebi.ac.uk/europepmc/webservices/rest/search?"+urlencode({"query":q,"format":"json","pageSize":3,"resultType":"core"})
+                  raw,_,_=get(url,3_000_000)
+                  p=json.loads(raw)
+                  row["hit_count"]=p.get("hitCount")
+                  row["matches"]=[{"title":x.get("title","")[:280],"doi":x.get("doi"),"pmcid":x.get("pmcid"),"pmid":x.get("pmid"),"open_access":x.get("isOpenAccess"),"fulltext_links":[{"url":l.get("url"),"availability":l.get("availability"),"style":l.get("documentStyle")} for l in x.get("fullTextUrlList",{}).get("fullTextUrl",[])[:5]]} for x in p.get("resultList",{}).get("result",[])]
+                  row["status"]="OK"
+              except Exception as e:
+                  row.update(status="FAILED",error=str(e)[:160])
+              emit(row)
+              time.sleep(.35)
+              return row
+          class Links(HTMLParser):
+              def __init__(self):
+                  super().__init__();self.links=[];self.title=False;self.t=[]
+              def handle_starttag(self,tag,attrs):
+                  d=dict(attrs)
+                  if tag=="a" and d.get("href"): self.links.append(d["href"])
+                  if tag=="title":self.title=True
+                  if tag=="meta" and d.get("name","").lower() in ("citation_pdf_url","citation_doi"): self.links.append(d.get("content",""))
+              def handle_endtag(self,tag):
+                  if tag=="title":self.title=False
+              def handle_data(self,data):
+                  if self.title:self.t.append(data)
+          def vendor(item):
+              name,url=item
+              row={"service":"PublicSourceProbe","source":name,"url":url}
+              try:
+                  p=urlsplit(url); robots=p.scheme+"://"+p.netloc+"/robots.txt"; rp=RobotFileParser()
+                  try:
+                      raw,_,_=get(robots,250000);rp.parse(raw.decode("utf-8","replace").splitlines())
+                  except HTTPError as e:
+                      if e.code not in (404,410): raise
+                      rp.parse([])
+                  if not rp.can_fetch(agent,url):
+                      row["status"]="SKIPPED_ROBOTS"
+                  else:
+                      raw,final,typ=get(url)
+                      row.update(status="RETRIEVED",bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest(),final_url=final,content_type=typ)
+                      if "html" in typ:
+                          parser=Links();parser.feed(raw.decode("utf-8","replace"))
+                          row["title"]=" ".join(parser.t)[:200]
+                          row["document_links"]=list(dict.fromkeys(urljoin(final,l) for l in parser.links if l and re.search(r"\.pdf(?:$|[?#])|/bitstream/|/download/|/doi/|/datasheet",l,re.I)))[:10]
+                      elif raw.startswith(b"%PDF"):
+                          row["status"]="PDF_RETRIEVED"
+              except Exception as e:
+                  row.update(status="FAILED",error=str(e)[:160])
+              emit(row)
+              return row
+          started=time.monotonic()
+          # Separate limited pools for different public services; request rate controlled per service.
+          with cf.ThreadPoolExecutor(max_workers=3) as pool:
+              a=pool.submit(lambda:list(map(crossref,papers+extra_queries)))
+              b=pool.submit(lambda:list(map(epmc,papers)))
+              c=pool.submit(lambda:list(map(vendor,vendors)))
+              cross=a.result();pm=b.result();v=c.result()
+          emit({"summary":{"Crossref_attempts":len(cross),"EuropePMC_attempts":len(pm),"public_source_attempts":len(v),"Crossref_success":sum(x["status"]=="OK" for x in cross),"EuropePMC_success":sum(x["status"]=="OK" for x in pm),"source_retrieved":sum(x["status"] in ("RETRIEVED","PDF_RETRIEVED") for x in v),"seconds":round(time.monotonic()-started,2),"metadata_is_not_admission_evidence":True}})
+          PY
