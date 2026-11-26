@@ -1,62 +1,94 @@
 [
   {
-    "manufacturer": "Gilson",
-    "url": "https://at.gilson.com/ATDE/amfile/file/download/file/3059/"
+    "manufacturer": "Repligen",
+    "url": "https://www.repligen.com/Products/krosflo_tff/krosflo-fs/resources/data_sheets/krosflo-fs-systems-data-sheet.pdf"
   },
   {
-    "manufacturer": "Gilson",
-    "url": "https://it.gilson.com/ITSV/amfile/file/download/file/2705/"
+    "manufacturer": "Repligen",
+    "url": "https://www.repligen.com/Products/krosflo_tff/krosflo-fs/resources/user_guides/IF-UG-033.pdf"
   },
   {
-    "manufacturer": "Gilson",
-    "url": "https://it.gilson.com/ITSV/amfile/file/download/file/2704/"
+    "manufacturer": "Repligen",
+    "url": "https://www.repligen.com/Products/krosflo_tfdf/krosflo-tfdf-technology/resources/user_guides/KrosFlo-TFDF-Lab-System-SG.pdf"
   },
   {
-    "manufacturer": "Gilson",
-    "url": "https://www.gilsonhk.com/media/pdf/VERITY271_UG_LT350012-04.pdf"
+    "manufacturer": "Repligen",
+    "url": "https://www.repligen.com/Products/krosflo_tfdf/krosflo-tfdf-technology/resources/user_guides/IF.UG-TFDF-Lab.pdf"
   },
   {
-    "manufacturer": "Gilson",
-    "url": "https://www.gilson.com/pub/media/docs/MINIPULS3_UG_LT801121-18.pdf"
+    "manufacturer": "Sartorius",
+    "url": "https://www.sartorius.com/download/1242510/sartoflow-advanced-datasheet-en-b-2803170-sartorius-pdf-data.pdf"
   },
   {
-    "manufacturer": "Scientific Laboratory Supplies (Gilson original manual mirror)",
-    "url": "https://www.scientificlabs.com/handlers/libraryFiles.ashx?filename=Manuals_F_F117606_B.pdf"
+    "manufacturer": "Sartorius",
+    "url": "https://www.sartorius.com/download/297806/data-ambr-crossflow-spc2084-e-pdf-data.pdf"
   },
   {
-    "manufacturer": "Tecan",
-    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Cavro_Components_Product_Overview_395351_V3.0.pdf"
+    "manufacturer": "Sartorius",
+    "url": "https://www.sartorius.com/download/1150102/sartoflow-smart-datasheet-en-b-2803216-sartorius-pdf-data.pdf"
   },
   {
-    "manufacturer": "Tecan",
-    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Cavro_Pumps_3995005_V1-0.pdf"
+    "manufacturer": "Sartorius",
+    "url": "https://shop.sartorius.com/us/p/sartoflow-smart/SFSMART"
   },
   {
-    "manufacturer": "Tecan",
-    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Cavro_Robotics_Family_Brochure_398889.pdf"
+    "manufacturer": "Watson-Marlow",
+    "url": "https://www.wmfts.com/globalassets/literature/manuals/m-qdos-en.pdf"
   },
   {
-    "manufacturer": "Tecan",
-    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Cavro_XCalibur_Pump_XC_397959_V1-0.pdf"
+    "manufacturer": "Biotage",
+    "url": "https://www.biotage.com/hubfs/bynder/Document/PPS447.V.1-biotage-spe-dry-96-product-note.pdf"
   },
   {
-    "manufacturer": "Tecan",
-    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Fluent_Gx_400401.pdf"
+    "manufacturer": "AFRY",
+    "url": "https://afry.com/en/project/delivering-innovation-in-evaporation-technology-biotage"
   },
   {
-    "manufacturer": "Tecan",
-    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Fluent_Laboratory_Automation_Solution_400400.pdf"
+    "manufacturer": "KNAUER",
+    "url": "https://www.knauer.net/web/content/136437"
   },
   {
-    "manufacturer": "Tecan",
-    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_PB_OEM_CP_Cavro_Centris_Pump_395529_V3-0.pdf"
+    "manufacturer": "KNAUER",
+    "url": "https://store.knauer.net/web/content/125384"
   },
   {
-    "manufacturer": "Tecan",
-    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/QG_ADP_Electromechanical_Integration_399095.pdf"
+    "manufacturer": "KNAUER",
+    "url": "https://www.knauer.net/Software/Mobile-control/LNP%20license%20v6.2.x/Release%20Notes%20Mobile%20Control%20v6.X.pdf"
   },
   {
-    "manufacturer": "Tecan",
-    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Cavro_Air_Displacement_Pipettor_396359_V1-2.pdf"
+    "manufacturer": "KNAUER",
+    "url": "https://store.knauer.net/shop/aph35ga-azura-r-p-6-1l-pump-hpg-stainless-steel-5-ml-min-for-uhplc-63174"
+  },
+  {
+    "manufacturer": "KNAUER",
+    "url": "https://store.knauer.net/shop/aaa20aa-azura-r-as-6-1l-biocompatible-autosampler-up-to-345-bar-without-cool-heat-option-62890/document/1353"
+  },
+  {
+    "manufacturer": "KNAUER",
+    "url": "https://store.knauer.net/shop/adb71-azura-r-vwd-2-1l-variable-wavelength-detector-flow-cell-version-86915/document/956"
+  },
+  {
+    "manufacturer": "KNAUER",
+    "url": "https://store.knauer.net/shop/afa01-azura-r-fc-6-1-fraction-collector-88118/document/799"
+  },
+  {
+    "manufacturer": "KNAUER",
+    "url": "https://www.knauer.net/manuals"
+  },
+  {
+    "manufacturer": "IWAKI",
+    "url": "https://iwakikorea.co.kr/ko/download/NnPnQmIkTLO6xNyfXGAZADARcItuGtNkp22Pb2eI"
+  },
+  {
+    "manufacturer": "Chemyx",
+    "url": "https://chemyx.com/syringe-pumps/fusion-200x/"
+  },
+  {
+    "manufacturer": "Chemyx",
+    "url": "https://chemyx.com/syringe-pumps/fusion-100x-syringe-pump/"
+  },
+  {
+    "manufacturer": "PendoTECH (original authored document; BioPharmWorld mirror)",
+    "url": "https://www.biopharmworld.com/assets/_PendoTECH-VirusDepth-DataSheet.pdf"
   }
 ]
