@@ -1,0 +1,50 @@
+name: Public technical document recovery
+
+on:
+  push:
+    branches: [public-doc-recovery-2026-11-26]
+    paths:
+      - public_sources/document_batch.json
+      - scripts/recover_public_documents.py
+      - .github/workflows/recover-public-documents.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-document-recovery-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  retrieve:
+    name: Recover public documents (${{ matrix.shard }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        shard: [0, 1, 2, 3]
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install document parsers
+        run: python3 -m pip install pypdf==6.1.1 beautifulsoup4==4.13.4
+      - name: Retrieve public sources with robots checks
+        run: |
+          mkdir -p evidence
+          python3 -m pip freeze > evidence/python_dependencies.txt
+          python3 scripts/recover_public_documents.py --sources public_sources/document_batch.json --output evidence --shard ${{ matrix.shard }} --shards 4
+      - name: Preserve original public documents and retrieval provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-documents-${{ github.run_id }}-${{ matrix.shard }}
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 7

@@ -1,0 +1,5 @@
+# Public technical-document recovery
+
+This optional bounded research utility accepts public manufacturer URLs only. It preserves source bytes and page-level text in short-lived workflow artifacts for engineering review. Retrieval is not verification or acceptance. Rights remain with original publishers; sources are not committed to the repository. Respect source terms and robots directives. Do not add confidential identifiers, workbooks, unpublished conclusions, credentials or private governance. The existing smoke-test and comparison workflows are unchanged.
+
+The separate recovery workflow runs on changes to its inputs on the dedicated public-doc-recovery-2026-11-26 branch and can also be dispatched where supported. It uses standard hosted runners, two host workers per job, up to three jobs simultaneously, and a 20-minute hard timeout per job. No secret or paid service is used. Failed or blocked retrieval remains recorded; the script does not bypass it. Source labels and extracted numerical text need manual engineering interpretation.
