@@ -67,7 +67,16 @@ class Retriever:
             rec = {'url': ru, 'retrieved_utc': utc()}
             parser = None
             try:
-                status, headers, raw = self.request_once(ru, 1024 * 1024)
+                robot_target = ru
+                rec['redirects'] = []
+                for hop in range(6):
+                    status, headers, raw = self.request_once(robot_target, 1024 * 1024)
+                    if status not in (301, 302, 303, 307, 308): break
+                    nxt = urllib.parse.urljoin(robot_target, headers.get('Location', headers.get('location', '')))
+                    if not nxt or nxt == robot_target: break
+                    rec['redirects'].append({'from':robot_target, 'to':nxt, 'status':status})
+                    robot_target = nxt
+                rec['final_url'] = robot_target
                 rec.update(http_status=status, sha256=sha(raw), bytes=len(raw))
                 if status == 200:
                     parser = RobotFileParser(ru)
@@ -88,7 +97,8 @@ class Retriever:
             delay = parser.crawl_delay(AGENT) or parser.crawl_delay('*')
             if delay:
                 wait = delay - (time.monotonic() - self.last.get(p.netloc, 0))
-                if wait > 0: time.sleep(min(wait, 120))
+                if wait > 120: raise RuntimeError('Source crawl delay exceeds bounded job allowance; skipped')
+                if wait > 0: time.sleep(wait)
         return allowed, rec
 
     def retrieve(self, source):
