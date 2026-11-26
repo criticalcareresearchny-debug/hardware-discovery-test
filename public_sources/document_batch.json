@@ -1,590 +1,62 @@
 [
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.co.jp/pdf_storage/catalog/analytical/c_rv.pdf"
+    "manufacturer": "Gilson",
+    "url": "https://at.gilson.com/ATDE/amfile/file/download/file/3059/"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.co.jp/pdf_storage/manual/analytical/m_rv10000.pdf"
+    "manufacturer": "Gilson",
+    "url": "https://it.gilson.com/ITSV/amfile/file/download/file/2705/"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.co.jp/pdf_storage/tech_doc/analytical/t_analytical_sensor.pdf"
+    "manufacturer": "Gilson",
+    "url": "https://it.gilson.com/ITSV/amfile/file/download/file/2704/"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.jp/products/manual/balances/SV_manual_add.pdf"
+    "manufacturer": "Gilson",
+    "url": "https://www.gilsonhk.com/media/pdf/VERITY271_UG_LT350012-04.pdf"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.jp/products/manual/balances/sv.pdf"
+    "manufacturer": "Gilson",
+    "url": "https://www.gilson.com/pub/media/docs/MINIPULS3_UG_LT801121-18.pdf"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.jp/products/manual/test_measuring/rv-10000.pdf"
+    "manufacturer": "Scientific Laboratory Supplies (Gilson original manual mirror)",
+    "url": "https://www.scientificlabs.com/handlers/libraryFiles.ashx?filename=Manuals_F_F117606_B.pdf"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.jp/products/manual/test_measuring/rv-10000a.pdf"
+    "manufacturer": "Tecan",
+    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Cavro_Components_Product_Overview_395351_V3.0.pdf"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.jp/products/test_measuring/pdf/rv-10000a_brochure.pdf"
+    "manufacturer": "Tecan",
+    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Cavro_Pumps_3995005_V1-0.pdf"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.jp/products/test_measuring/pdf/sv.pdf"
+    "manufacturer": "Tecan",
+    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Cavro_Robotics_Family_Brochure_398889.pdf"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.jp/products/test_measuring/rv/RV-10000A_Short Guide.pdf"
+    "manufacturer": "Tecan",
+    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Cavro_XCalibur_Pump_XC_397959_V1-0.pdf"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.jp/products/test_measuring/sv10/handbook/sv_users_handbook_v1.13e.pdf"
+    "manufacturer": "Tecan",
+    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Fluent_Gx_400401.pdf"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.jp/support/materials/SV&RV_Material_and_Chemical_Resistance.pdf"
+    "manufacturer": "Tecan",
+    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Fluent_Laboratory_Automation_Solution_400400.pdf"
   },
   {
-    "manufacturer": "A&D Company, Ltd.",
-    "url": "https://www.aandd.jp/support/materials/sv_jis.pdf"
+    "manufacturer": "Tecan",
+    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_PB_OEM_CP_Cavro_Centris_Pump_395529_V3-0.pdf"
   },
   {
-    "manufacturer": "Beckman Coulter Life Sciences",
-    "url": "https://media.beckman.com/-/media/pdf-assets/brochures/biomek-i3-benchtop-liquid-handler-brochure.pdf?rev=0275945fd0f64874a5fbd9e73162afe9"
+    "manufacturer": "Tecan",
+    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/QG_ADP_Electromechanical_Integration_399095.pdf"
   },
   {
-    "manufacturer": "Biotage",
-    "url": "https://www.biotage.com/hubfs/BR01-Biotage-Selekt-brochure-digital-1.pdf"
-  },
-  {
-    "manufacturer": "Biotage",
-    "url": "https://www.biotage.com/hubfs/BR01-Biotage-Selekt-brochure-digital-2.pdf"
-  },
-  {
-    "manufacturer": "Biotage",
-    "url": "https://www.biotage.com/hubfs/bynder/Document/BR03-biotage-large-scale-flash-purification-brochure.pdf"
-  },
-  {
-    "manufacturer": "Biotage",
-    "url": "https://www.biotage.com/hubfs/bynder/Document/PPS495.V.8-biotage-selekt-family-advanced-automated-flash-purification-systems-brochure.pdf"
-  },
-  {
-    "manufacturer": "Biotage",
-    "url": "https://www.biotage.com/hubfs/bynder/Document/PPS644-biotage-extrahera-lv-200-sample-prep-workstation-brochure.pdf"
-  },
-  {
-    "manufacturer": "Biotage",
-    "url": "https://www.biotage.com/hubfs/bynder/Document/PPS660.V1-biotage-turbovap-96-dual-brochure.pdf"
-  },
-  {
-    "manufacturer": "Biotage",
-    "url": "https://www.biotage.com/hubfs/bynder/Document/TN27.V.1-biotage-pressure-48-96-product-note.pdf"
-  },
-  {
-    "manufacturer": "Chemyx Inc.",
-    "url": "https://chemyx.com/downloads/fusion-200-x-specsheet.pdf"
-  },
-  {
-    "manufacturer": "Chemyx Inc.",
-    "url": "https://www.chemyx.com/downloads/4000-X-SPEC-SHEET.pdf"
-  },
-  {
-    "manufacturer": "Chemyx Inc.",
-    "url": "https://www.chemyx.com/downloads/4K-OEM_Manual.pdf"
-  },
-  {
-    "manufacturer": "Chemyx Inc.",
-    "url": "https://www.chemyx.com/downloads/FUSION-4K-OEM-SPECSHEET.pdf"
-  },
-  {
-    "manufacturer": "Chemyx Inc.",
-    "url": "https://www.chemyx.com/downloads/Fusion-6000-x-technical-spec.pdf"
-  },
-  {
-    "manufacturer": "DataPhysics Instruments GmbH",
-    "url": "https://cdn.dataphysics-instruments.com/Downloads/DCAT_EN.pdf?v=2.2"
-  },
-  {
-    "manufacturer": "DataPhysics Instruments GmbH",
-    "url": "https://cdn.dataphysics-instruments.com/Downloads/OCA25-HTV1800_EN.pdf?v=1.5"
-  },
-  {
-    "manufacturer": "DataPhysics Instruments GmbH",
-    "url": "https://cdn.dataphysics-instruments.com/Downloads/OCA25-PMC_EN.pdf?v=1.62"
-  },
-  {
-    "manufacturer": "DataPhysics Instruments GmbH",
-    "url": "https://cdn.dataphysics-instruments.com/Downloads/OCA_EN.pdf?v=2.1"
-  },
-  {
-    "manufacturer": "DataPhysics Instruments GmbH",
-    "url": "https://www.dataphysics-instruments.com/resources/Downloads/DCAT_EN.pdf?v=2.2"
-  },
-  {
-    "manufacturer": "DataPhysics Instruments GmbH",
-    "url": "https://www.dataphysics-instruments.com/resources/Downloads/LDU_EN.pdf?v=1.1"
-  },
-  {
-    "manufacturer": "DataPhysics Instruments GmbH",
-    "url": "https://www.dataphysics-instruments.com/resources/Downloads/LTMr_EN.pdf?v=1.1"
-  },
-  {
-    "manufacturer": "Eppendorf",
-    "url": "https://www.eppendorf.com/product-media/doc/en/2719048/Liquid-Handling_Flyer_Xplorer-plus-Xplorer-plus-Move-It_Pipette-Manager_Simply-Better-Pipetting.pdf"
-  },
-  {
-    "manufacturer": "Eppendorf",
-    "url": "https://www.eppendorf.com/product-media/doc/en_us/140712/Eppendorf_Liquid-Handling_Brochure_MultipetteE3-E3x_Generation-E.pdf"
-  },
-  {
-    "manufacturer": "Eppendorf",
-    "url": "https://www.eppendorf.com/product-media/doc/en_us/148063/Eppendorf_Liquid-Handling_Technical-data_MultipetteE3-E3x_Combitips-advanced_Multipette-E3-E3x-Combitips-advanced-Performance-Data-Sheet.pdf"
-  },
-  {
-    "manufacturer": "Eppendorf",
-    "url": "https://www.eppendorf.com/product-media/doc/en_us/1497279/Eppendorf_Liquid-Handling_Brochure_Pipettes_Natural-Winners.pdf"
-  },
-  {
-    "manufacturer": "Eppendorf",
-    "url": "https://www.eppendorf.com/product-media/doc/en_us/68587/Liquid-Handling_Technical-data_Multipette-M4_Combitips-advanced_Multipette-M4-Combitips-advanced-Performance-Data-Sheet.pdf"
-  },
-  {
-    "manufacturer": "Eppendorf",
-    "url": "https://www.eppendorf.com/product-media/doc/en_us/70718/Eppendorf_Liquid-Handling_Brochure_Multipette-M4_Count-it.pdf"
-  },
-  {
-    "manufacturer": "Eppendorf SE",
-    "url": "https://www.eppendorf.com/product-media/doc/en/1117018/Automated-Liquid-Handling_Flyer_epMotion-5070_5073_5075_Your-Normalization-Effortless.pdf"
-  },
-  {
-    "manufacturer": "Eppendorf SE",
-    "url": "https://www.eppendorf.com/product-media/doc/en/7777579/Automated-Liquid-Handling_Brochure_epMotion-5070_5073_5075_96-flex_Unleash-Your-Potential.pdf"
-  },
-  {
-    "manufacturer": "Eppendorf SE",
-    "url": "https://www.eppendorf.com/product-media/doc/en/8407472/Automated-Liquid-Handling_Overview_epMotion-5070_5073_5075_Our-epMotion-Family.pdf"
-  },
-  {
-    "manufacturer": "Eppendorf SE",
-    "url": "https://www.eppendorf.com/product-media/doc/en_us/239851/Automated-Liquid-Handling_Brochure_epMotion-5070_5073_5075.pdf"
-  },
-  {
-    "manufacturer": "Frewitt SA",
-    "url": "https://frewitt.com/media/ahdn2pcy/en_flexmill-lab.pdf"
-  },
-  {
-    "manufacturer": "Frewitt SA",
-    "url": "https://frewitt.com/media/gludeky3/frewitt-easymill-lab-en.pdf"
-  },
-  {
-    "manufacturer": "Frewitt SA",
-    "url": "https://frewitt.com/media/hupjcm2b/en_flexmill_pmc-160.pdf"
-  },
-  {
-    "manufacturer": "Frewitt SA",
-    "url": "https://frewitt.com/media/iaqjr4ih/frewitt_yourbatterysolutionprovider-en.pdf"
-  },
-  {
-    "manufacturer": "INTEGRA Biosciences AG",
-    "url": "https://www.integra-biosciences.com/sites/default/files/documents/125950_v22_oi_viaflo_96_384_en.pdf"
-  },
-  {
-    "manufacturer": "INTEGRA Biosciences AG",
-    "url": "https://www.integra-biosciences.com/sites/default/files/documents/128950_v10_oi_assist_plus_en.pdf"
-  },
-  {
-    "manufacturer": "INTEGRA Biosciences AG",
-    "url": "https://www.integra-biosciences.com/sites/default/files/documents/128966_v04_oi_d-one_en.pdf"
-  },
-  {
-    "manufacturer": "INTEGRA Biosciences AG",
-    "url": "https://www.integra-biosciences.com/sites/default/files/documents/129950_v03_oi_mini_96_en.pdf"
-  },
-  {
-    "manufacturer": "INTEGRA Biosciences AG",
-    "url": "https://www.integra-biosciences.com/sites/default/files/documents/171250_v14_oi_dose_it_en.pdf"
-  },
-  {
-    "manufacturer": "INTEGRA Biosciences AG",
-    "url": "https://www.integra-biosciences.com/sites/default/files/documents/191950_v09_oi_welljet_en.pdf"
-  },
-  {
-    "manufacturer": "INTEGRA Biosciences AG",
-    "url": "https://www.integra-biosciences.com/sites/default/files/documents/welljet_device_specifications_v01.pdf"
-  },
-  {
-    "manufacturer": "INTEGRA Biosciences AG",
-    "url": "https://www.integra-biosciences.com/sites/default/files/documents/welljet_dispense_specifications_v06.pdf"
-  },
-  {
-    "manufacturer": "KRÜSS Scientific",
-    "url": "https://images.kruss-scientific.com/files/kruss-bro-dsa100-en.pdf"
-  },
-  {
-    "manufacturer": "KRÜSS Scientific",
-    "url": "https://images.kruss-scientific.com/files/kruss-bro-tensiio-en.pdf"
-  },
-  {
-    "manufacturer": "KRÜSS Scientific",
-    "url": "https://images.kruss-scientific.com/files/kruss-techdata-dsa100-en.pdf"
-  },
-  {
-    "manufacturer": "KRÜSS Scientific",
-    "url": "https://images.kruss-scientific.com/files/kruss-techdata-tensiio-en.pdf"
-  },
-  {
-    "manufacturer": "Kyoto Electronics Manufacturing",
-    "url": "https://www.kem.kyoto/en/wp-content/uploads/sites/2/2025/04/General-catalog.pdf"
-  },
-  {
-    "manufacturer": "Kyoto Electronics Manufacturing",
-    "url": "https://www.kem.kyoto/wp-content/uploads/2025/12/MKVC-710.pdf"
-  },
-  {
-    "manufacturer": "LUM GmbH",
-    "url": "https://www.lum-gmbh.com/files/upload/products/LUMiFlector/pdf/Produktdetails%20LUMiFlector%20At-line.pdf"
-  },
-  {
-    "manufacturer": "LUM GmbH",
-    "url": "https://www.lum-gmbh.com/files/upload/products/LUMiFrac/pdf/LFrac%20Specifications.pdf"
-  },
-  {
-    "manufacturer": "LUM GmbH",
-    "url": "https://www.lum-gmbh.com/files/upload/products/LUMiReader-PSA/pdf/Produktdetails%20LUMiReader%20PSA.pdf"
-  },
-  {
-    "manufacturer": "LUM GmbH",
-    "url": "https://www.lum-gmbh.com/files/upload/products/LUMiSizer/pdf/Produktdetails%20LUMiSizer.pdf"
-  },
-  {
-    "manufacturer": "LUM GmbH",
-    "url": "https://www.lum-gmbh.com/files/upload/products/LUMiSpoc/pdf/Produktdetails%20LUMiSpoc.pdf"
-  },
-  {
-    "manufacturer": "Labthink Instruments Co., Ltd.",
-    "url": "https://en.labthink.com/productdocumenten/C390-Water-Vapor-Transmission-Rate-Test-System.pdf"
-  },
-  {
-    "manufacturer": "Labthink Instruments Co., Ltd.",
-    "url": "https://en.labthink.com/productdocumenten/C406H.pdf"
-  },
-  {
-    "manufacturer": "Labthink Instruments Co., Ltd.",
-    "url": "https://en.labthink.com/productdocumenten/W3-062-Water-Vapor-Transmission-Rate-Test-System.pdf"
-  },
-  {
-    "manufacturer": "Labthink Instruments Co., Ltd.",
-    "url": "https://en.labthink.com/productdocumenten/c690m.pdf"
-  },
-  {
-    "manufacturer": "Longer Pump",
-    "url": "https://longerpump.com/list_69/926.html"
-  },
-  {
-    "manufacturer": "Longer Pump",
-    "url": "https://www.longerpump.com/list_69/923.html"
-  },
-  {
-    "manufacturer": "Longer Pump",
-    "url": "https://www.longerpump.com/list_69/929.html"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005256EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005433DE.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005433EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005446EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005448DE.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005448EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005456DE.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005456EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005459DE.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005459EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005472EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005516DE.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005516EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005517EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005518EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005520EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/brochures/8000/80005543EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/manuals/80/806008101DE.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/manuals/80/806008101EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/manuals/81/810038002DE.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/manuals/81/810128003DE.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/manuals/81/810128003EN.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/manuals/81/810728101DE.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/operator-trainings/806008202DE.pdf"
-  },
-  {
-    "manufacturer": "Metrohm",
-    "url": "https://www.metrohm.com/content/dam/metrohm/shared/documents/operator-trainings/806008202EN.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://pendotech.com/wp-content/uploads/2019/10/Pendotech-_DS_UV-VIS-Photometer_Cal_Kit.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://pendotech.com/wp-content/uploads/2020/08/AirDetector_datasheet.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://pendotech.com/wp-content/uploads/2025/08/Pendotech_DS_CMONT_REVA.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2019/10/CP_Vessel.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/03/Lab-Scale-Process-Vessels.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/Conductivity_Sensor_transmitter.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/DAQ_datasheet.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/PDKT-TT1_datasheet.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/PMAT_DPG_Data.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/PMAT_GUI_Info.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/PendoTECH_SingleUse_RotaryFlowmeter.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/PendoTECH_TFF_Spec_Sheet.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/PressureMAT_Plus.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/PressureMAT_Spec_Sheet.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/Temperature_transmitter_Info.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/Throttle_Valve_Info.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/08/VirusDepth_DataSheet.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2020/12/Pressure_Sensors_Spec_Sheet.pdf"
-  },
-  {
-    "manufacturer": "Mettler-Toledo PendoTECH",
-    "url": "https://www.pendotech.com/wp-content/uploads/2021/01/ContactControl_Relay_PowerControl.pdf"
-  },
-  {
-    "manufacturer": "PAMAS Partikelmess- und Analysesysteme GmbH",
-    "url": "https://www.pamas.de/fileadmin/user_upload/download/brochure/Labor-Partikelzaehler/PAMAS_S70/S70_de.pdf"
-  },
-  {
-    "manufacturer": "PAMAS Partikelmess- und Analysesysteme GmbH",
-    "url": "https://www.pamas.de/fileadmin/user_upload/download/brochure/Labor-Partikelzaehler/PAMAS_SBSS/SBSS_de.pdf"
-  },
-  {
-    "manufacturer": "PAMAS Partikelmess- und Analysesysteme GmbH",
-    "url": "https://www.pamas.de/fileadmin/user_upload/download/brochure/Labor-Partikelzaehler/PAMAS_SBSS/SBSS_en.pdf"
-  },
-  {
-    "manufacturer": "PAMAS Partikelmess- und Analysesysteme GmbH",
-    "url": "https://www.pamas.de/fileadmin/user_upload/download/brochure/Labor-Partikelzaehler/PAMAS_SVSS/SVSS_de.pdf"
-  },
-  {
-    "manufacturer": "PAMAS Partikelmess- und Analysesysteme GmbH",
-    "url": "https://www.pamas.de/fileadmin/user_upload/download/brochure/Labor-Partikelzaehler/PAMAS_SVSS/SVSS_en.pdf"
-  },
-  {
-    "manufacturer": "PreciGenome LLC",
-    "url": "https://www.precigenome.com/_files/ugd/ec0ae9_54799672b0f74d209da187f9ce7d76e9.pdf?index=true"
-  },
-  {
-    "manufacturer": "PreciGenome LLC",
-    "url": "https://www.precigenome.com/_files/ugd/ec0ae9_a9baf4a5e2de494199052ac61f7eb07d.pdf?index=true"
-  },
-  {
-    "manufacturer": "Rigaku Corporation",
-    "url": "https://rigaku.com/hubfs/2024%20Rigaku%20Global%20Site/Resource%20Hub/Knowledge%20Library/Brochures/BR_23_MiniFlex_Rev0723_226325528_SinglePgs_low-res.pdf?hsLang=en"
-  },
-  {
-    "manufacturer": "Rigaku Corporation",
-    "url": "https://rigaku.com/hubfs/2024%20Rigaku%20Global%20Site/Resource%20Hub/Knowledge%20Library/Brochures/BR_23_SmartLab%20brochure_en_A4_4064745726_Ver2_low-res.pdf?hsLang=en"
-  },
-  {
-    "manufacturer": "Rigaku Corporation",
-    "url": "https://rigaku.com/hubfs/2024%20Rigaku%20Global%20Site/Resource%20Hub/Knowledge%20Library/Brochures/XRD%20Application%20Attachments_CED440G_brochure_en.pdf?hsLang=en"
-  },
-  {
-    "manufacturer": "SPT Labtech Ltd",
-    "url": "https://www.sptlabtech.com/hubfs/SPT%20Labtech%20-%20mosquito%20LV_A4%20flyer.pdf"
-  },
-  {
-    "manufacturer": "SPT Labtech Ltd",
-    "url": "https://www.sptlabtech.com/hubfs/SPT%20Labtech%20-%20mosquito%20X1_A4%20flyer.pdf"
-  },
-  {
-    "manufacturer": "SPT Labtech Ltd",
-    "url": "https://www.sptlabtech.com/hubfs/SPT%20Labtech%20firefly%20flyer%2026.pdf"
-  },
-  {
-    "manufacturer": "Sartorius",
-    "url": "https://www.sartorius.com/download/1701264/tff-portfolio-brochure-en-b-pdf-data.pdf"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://ww3.tecan.com/mandant/files/doc/294/BR_Cavro_XMP_Pump_396026_V1-1.pdf"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://ww3.tecan.com/mandant/files/doc/295/BR_Cavro_Pumps_3995005_V1-0.pdf"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://ww3.tecan.com/mandant/files/doc/301/BR_Cavro_Air_Displacement_Pipettor_396359_V1-2.pdf"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://www.tecan.com/doc?t77=BR_Cavro_Components_Product_Overview_395351_V3.0.pdf&hsLang=en"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://www.tecan.com/doc?t77=BR_Cavro_Pumps_3995005_V1-0.pdf&hsLang=en"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://www.tecan.com/doc?t77=BR_Cavro_Robotics_Family_Brochure_398889.pdf&hsLang=en"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://www.tecan.com/doc?t77=BR_Cavro_XCalibur_Pump_XC_397959_V1-0.pdf&hsLang=en"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://www.tecan.com/doc?t77=BR_Cavro_XLP_Pump_394234_V2-0.pdf&hsLang=en"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://www.tecan.com/doc?t77=BR_Cavro_XMP_Pump_396026_V1-1.pdf&hsLang=en"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://www.tecan.com/doc?t77=BR_Fluent_Gx_400401.pdf&hsLang=en"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://www.tecan.com/doc?t77=BR_Fluent_Laboratory_Automation_Solution_400400.pdf&hsLang=en"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://www.tecan.com/doc?t77=BR_PB_OEM_CP_Cavro_Centris_Pump_395529_V3-0.pdf&hsLang=en"
-  },
-  {
-    "manufacturer": "Tecan Group Ltd.",
-    "url": "https://www.tecan.com/doc?t77=QG_ADP_Electromechanical_Integration_399095.pdf&cid=4488203724&hsLang=en"
-  },
-  {
-    "manufacturer": "Teledyne Hanson Research",
-    "url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-quality-equivalence-locally-applied-locally-acting-cutaneous-products_en.pdf"
-  },
-  {
-    "manufacturer": "Teledyne Hanson Research",
-    "url": "https://www.teledynelabs.com/en-us/resources/Documents/Application-Notes/DIF-AN-2502-EMA-guidelines.pdf?__hstc=67440590.bc30782f032fde7eaaf76fd815721b39.1787344599294.1790885252888.1791215369351.33&__hssc=67440590.35.1791215369351&__hsfp=c4462502362f9367c9808731fa8ea2d9"
-  },
-  {
-    "manufacturer": "Wyatt Technology (Waters)",
-    "url": "https://wyattfiles.s3.us-west-2.amazonaws.com/literature/white-papers/WP9005-ViscoStar-Innovations-in-Online-Viscometry.pdf"
+    "manufacturer": "Tecan",
+    "url": "https://www.tecan.com/hubfs/HubDB/Te-DocDB/pdf/BR_Cavro_Air_Displacement_Pipettor_396359_V1-2.pdf"
   }
 ]
