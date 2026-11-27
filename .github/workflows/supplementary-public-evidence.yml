@@ -1,0 +1,56 @@
+name: Supplementary public document evidence
+
+on:
+  push:
+    branches: [supplement/public-evidence-index-20261127]
+    paths:
+      - public_sources/supplementary_document_urls.json
+      - scripts/index_public_evidence.py
+      - tests/test_index_public_evidence.py
+      - .github/workflows/supplementary-public-evidence.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: supplementary-public-evidence-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  retrieve:
+    name: Retrieve and index public documents (${{ matrix.shard }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        shard: [0, 1, 2, 3]
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate synthetic provenance cases
+        run: python3 -m unittest discover -s tests -v
+      - name: Install document parsers
+        run: python3 -m pip install pypdf==6.1.1 beautifulsoup4==4.13.4
+      - name: Retrieve public sources with robots checks
+        run: |
+          mkdir -p evidence
+          python3 -m pip freeze > evidence/python_dependencies.txt
+          cp scripts/index_public_evidence.py evidence/index_public_evidence.py
+          python3 scripts/recover_public_documents.py --sources public_sources/supplementary_document_urls.json --output evidence --shard ${{ matrix.shard }} --shards 4
+      - name: Index source text with immutable provenance
+        run: python3 scripts/index_public_evidence.py --evidence-root evidence --output evidence/index
+      - name: Preserve public documents, locators, and retrieval provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: supplementary-public-evidence-${{ github.run_id }}-${{ matrix.shard }}
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 7
