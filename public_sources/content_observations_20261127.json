@@ -1,0 +1,6 @@
+{
+  "https://ashizawa.com/pdf/dl/LAB.pdf": {
+    "flags": ["PDF_FONT_MAPPING_GARBLED"],
+    "note": "Extracted Japanese glyphs are garbled; inspect rendered original PDF pages for numerical values and labels before using this extraction."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "repository": "criticalcareresearchny-debug/hardware-discovery-test",
+  "branch": "supplement/public-evidence-index-20261127",
+  "source_commit": "0791d803016d8fa07299431a5f28fce20155ff67",
+  "run_id": 46079540850,
+  "run_url": "https://github.com/criticalcareresearchny-debug/hardware-discovery-test/actions/runs/46079540850",
+  "run_status": "completed",
+  "run_conclusion": "success",
+  "started_utc": "2026-11-27T22:55:45Z",
+  "completed_utc": "2026-11-27T22:57:43Z",
+  "public_source_count": 188,
+  "public_source_manifest_sha256": "592f0441cb8cc9395e285cba2fb387a0f198ea009e913f3766e7fea74c6d525b",
+  "retrieval_outcomes": {
+    "RETRIEVED": 140,
+    "HTTP_404": 5,
+    "HTTP_403": 9,
+    "SKIPPED_ROBOTS_OR_ROBOTS_UNAVAILABLE": 31,
+    "RETRIEVAL_ERROR": 1,
+    "HTTP_406": 2
+  },
+  "content_review_classes": {
+    "TEXT_AVAILABLE_FOR_REVIEW": 130,
+    "NOT_RETRIEVED": 48,
+    "PDF_REQUIRES_VISUAL_REVIEW": 1,
+    "PLACEHOLDER_PAGE": 5,
+    "UNEXPECTED_MEDIA": 1,
+    "TEXT_AVAILABLE_AFTER_DECODING": 1,
+    "ERROR_OR_ACCESS_PAGE": 1,
+    "IMAGE_REQUIRES_VISUAL_REVIEW": 1
+  },
+  "raw_extracted_page_count": 451,
+  "engineering_acceptance_performed": false,
+  "interpretation": "HTTP retrieval success and text availability do not establish valid engineering evidence or device identity.",
+  "validation": {
+    "hosted_provenance_tests_per_job": 8,
+    "hosted_job_count": 4,
+    "local_provenance_and_content_tests": 14,
+    "artifact_zip_digests_verified": true,
+    "content_audit_environment": "Local Python 3.12.14, after artifact retrieval",
+    "source_or_extraction_hash_mismatches": 0
+  },
+  "dependency_warning": "GitHub reported Node.js 20 deprecation for actions/checkout@v4 and actions/upload-artifact@v4, forcing Node.js 24. All jobs succeeded. This was a deprecation warning, not an expired dependency failure.",
+  "artifacts": [
+    {
+      "id": 15237315073,
+      "name": "supplementary-public-evidence-46079540850-3",
+      "bytes": 34365254,
+      "digest": "sha256:6b94aac84f8ee951979aaaed5a4559427a265588d494e5e936e4e1dcc06a1a1d",
+      "expires_at": "2026-12-04T22:57:38Z"
+    },
+    {
+      "id": 15236465599,
+      "name": "supplementary-public-evidence-46079540850-0",
+      "bytes": 6618060,
+      "digest": "sha256:a965a2b391184bd3209ebfc425ab29b6a2dfe046fb66d847381555040c4f82c0",
+      "expires_at": "2026-12-04T22:56:46Z"
+    },
+    {
+      "id": 15236084622,
+      "name": "supplementary-public-evidence-46079540850-2",
+      "bytes": 8605935,
+      "digest": "sha256:ddba657368f81181346a49a49139b2b63e4432fa5b227a114d80d9c9cd9e5e26",
+      "expires_at": "2026-12-04T22:56:59Z"
+    },
+    {
+      "id": 15236024798,
+      "name": "supplementary-public-evidence-46079540850-1",
+      "bytes": 3817582,
+      "digest": "sha256:db0e2d45e38b9aced435ce55366585717b3114a83cefdd4f74b5b53adb82ff62",
+      "expires_at": "2026-12-04T22:56:30Z"
+    }
+  ],
+  "local_content_audit_script_sha256": "da3ad95cf1379b11a5bd3250bf803e4e0bbba28d59e30a63d46e8724cd7c8d84"
+}
