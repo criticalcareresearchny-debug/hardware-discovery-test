@@ -1,94 +1,66 @@
 [
   {
-    "manufacturer": "Repligen",
-    "url": "https://www.repligen.com/Products/krosflo_tff/krosflo-fs/resources/data_sheets/krosflo-fs-systems-data-sheet.pdf"
+    "manufacturer": "Aishin Nano Technologies",
+    "url": "https://feeder.jp/ct.html"
   },
   {
-    "manufacturer": "Repligen",
-    "url": "https://www.repligen.com/Products/krosflo_tff/krosflo-fs/resources/user_guides/IF-UG-033.pdf"
+    "manufacturer": "Aishin Nano Technologies",
+    "url": "https://feeder.jp/ec.html"
   },
   {
-    "manufacturer": "Repligen",
-    "url": "https://www.repligen.com/Products/krosflo_tfdf/krosflo-tfdf-technology/resources/user_guides/KrosFlo-TFDF-Lab-System-SG.pdf"
+    "manufacturer": "Aishin Nano Technologies",
+    "url": "https://feeder.jp/ad.html"
   },
   {
-    "manufacturer": "Repligen",
-    "url": "https://www.repligen.com/Products/krosflo_tfdf/krosflo-tfdf-technology/resources/user_guides/IF.UG-TFDF-Lab.pdf"
+    "manufacturer": "Aishin Nano Technologies",
+    "url": "https://feeder.jp/feature.html"
   },
   {
-    "manufacturer": "Sartorius",
-    "url": "https://www.sartorius.com/download/1242510/sartoflow-advanced-datasheet-en-b-2803170-sartorius-pdf-data.pdf"
+    "manufacturer": "Aishin Nano Technologies",
+    "url": "https://feeder.jp/ad/AD_controller_guide.pdf"
   },
   {
-    "manufacturer": "Sartorius",
-    "url": "https://www.sartorius.com/download/297806/data-ambr-crossflow-spc2084-e-pdf-data.pdf"
+    "manufacturer": "Funken Powtech",
+    "url": "https://www.funken.co.jp/products.html"
   },
   {
-    "manufacturer": "Sartorius",
-    "url": "https://www.sartorius.com/download/1150102/sartoflow-smart-datasheet-en-b-2803216-sartorius-pdf-data.pdf"
+    "manufacturer": "Sugino Machine",
+    "url": "https://www.sugino.com/products/wet-type-atomization-equipment/sbs-type-mini/"
   },
   {
-    "manufacturer": "Sartorius",
-    "url": "https://shop.sartorius.com/us/p/sartoflow-smart/SFSMART"
+    "manufacturer": "Sugino Machine",
+    "url": "https://www.sugino.com/products/wet-type-atomization-equipment/sbs-type-labo/"
   },
   {
-    "manufacturer": "Watson-Marlow",
-    "url": "https://www.wmfts.com/globalassets/literature/manuals/m-qdos-en.pdf"
+    "manufacturer": "Sugino Machine",
+    "url": "https://www.suginocorp.com/star-burst/"
   },
   {
-    "manufacturer": "Biotage",
-    "url": "https://www.biotage.com/hubfs/bynder/Document/PPS447.V.1-biotage-spe-dry-96-product-note.pdf"
+    "manufacturer": "NEXTPUMP",
+    "url": "https://nextpump.co.kr/products/266"
   },
   {
-    "manufacturer": "AFRY",
-    "url": "https://afry.com/en/project/delivering-innovation-in-evaporation-technology-biotage"
+    "manufacturer": "NEXTPUMP",
+    "url": "https://nextpump.co.kr/en/products/265"
   },
   {
-    "manufacturer": "KNAUER",
-    "url": "https://www.knauer.net/web/content/136437"
+    "manufacturer": "NEXTPUMP",
+    "url": "https://nextpump.co.kr/resources"
   },
   {
-    "manufacturer": "KNAUER",
-    "url": "https://store.knauer.net/web/content/125384"
+    "manufacturer": "Telstar",
+    "url": "https://www.telstar.com/wp-content/uploads/2024/01/BR-LYOBETA-EN-0723.pdf"
   },
   {
-    "manufacturer": "KNAUER",
-    "url": "https://www.knauer.net/Software/Mobile-control/LNP%20license%20v6.2.x/Release%20Notes%20Mobile%20Control%20v6.X.pdf"
+    "manufacturer": "Telstar",
+    "url": "https://www.telstar.com/wp-content/uploads/2025/04/BR-LYOQUEST-EN-0325.pdf"
   },
   {
-    "manufacturer": "KNAUER",
-    "url": "https://store.knauer.net/shop/aph35ga-azura-r-p-6-1l-pump-hpg-stainless-steel-5-ml-min-for-uhplc-63174"
+    "manufacturer": "Telstar",
+    "url": "https://www.telstar.com/en/laboratory-equipment/laboratory-freeze-dryers/"
   },
   {
-    "manufacturer": "KNAUER",
-    "url": "https://store.knauer.net/shop/aaa20aa-azura-r-as-6-1l-biocompatible-autosampler-up-to-345-bar-without-cool-heat-option-62890/document/1353"
-  },
-  {
-    "manufacturer": "KNAUER",
-    "url": "https://store.knauer.net/shop/adb71-azura-r-vwd-2-1l-variable-wavelength-detector-flow-cell-version-86915/document/956"
-  },
-  {
-    "manufacturer": "KNAUER",
-    "url": "https://store.knauer.net/shop/afa01-azura-r-fc-6-1-fraction-collector-88118/document/799"
-  },
-  {
-    "manufacturer": "KNAUER",
-    "url": "https://www.knauer.net/manuals"
-  },
-  {
-    "manufacturer": "IWAKI",
-    "url": "https://iwakikorea.co.kr/ko/download/NnPnQmIkTLO6xNyfXGAZADARcItuGtNkp22Pb2eI"
-  },
-  {
-    "manufacturer": "Chemyx",
-    "url": "https://chemyx.com/syringe-pumps/fusion-200x/"
-  },
-  {
-    "manufacturer": "Chemyx",
-    "url": "https://chemyx.com/syringe-pumps/fusion-100x-syringe-pump/"
-  },
-  {
-    "manufacturer": "PendoTECH (original authored document; BioPharmWorld mirror)",
-    "url": "https://www.biopharmworld.com/assets/_PendoTECH-VirusDepth-DataSheet.pdf"
+    "manufacturer": "Biopharma Group",
+    "url": "https://biopharma.co.uk/wp-content/uploads/2023/02/ITFD-Booklet-Digi-V2.0920_CALI.pdf"
   }
 ]
