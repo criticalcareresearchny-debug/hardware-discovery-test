@@ -1,0 +1,53 @@
+name: Public manufacturer discovery sources
+
+on:
+  push:
+    branches: [research/public-source-discovery-20261127]
+    paths:
+      - public_sources/discovery_public_urls_20261127.json
+      - scripts/audit_public_evidence.py
+      - tests/test_audit_public_evidence.py
+      - .github/workflows/public-discovery-20261127.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-discovery-20261127-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  retrieve:
+    name: Retrieve linked public sources
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate synthetic provenance and content cases
+        run: python3 -m unittest discover -s tests -v
+      - name: Install document parsers
+        run: python3 -m pip install pypdf==6.1.1 beautifulsoup4==4.13.4
+      - name: Retrieve linked public documents with robots checks
+        run: |
+          mkdir -p evidence
+          python3 -m pip freeze > evidence/python_dependencies.txt
+          cp scripts/index_public_evidence.py scripts/audit_public_evidence.py evidence/
+          python3 scripts/recover_public_documents.py --sources public_sources/discovery_public_urls_20261127.json --output evidence
+      - name: Index original source text and audit response content
+        run: |
+          python3 scripts/index_public_evidence.py --evidence-root evidence --output evidence/index
+          python3 scripts/audit_public_evidence.py --evidence-root evidence --output evidence/content_audit
+      - name: Preserve public source bytes and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-discovery-20261127-${{ github.run_id }}
+          path: evidence/
+          if-no-files-found: error
+          retention-days: 7
