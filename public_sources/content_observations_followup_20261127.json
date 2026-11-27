@@ -1,0 +1,10 @@
+{
+  "https://cometa.ru/upload/iblock/57a/qbzv2a9oewym3c0qtwgsl4ym0fhovf4y.pdf": {
+    "flags": ["ERROR_OR_ACCESS_PAGE"],
+    "note": "HTTP 200 returned an HTML page titled KillBot user verification, not the requested PDF. No challenge bypass was attempted."
+  },
+  "https://www.icpdas.com/en/product/PET-AR401__Series": {
+    "flags": ["JAVASCRIPT_REDIRECT_SHELL"],
+    "note": "The response contains a JavaScript redirect to https://www.icpdas.com/en/product/PET-AR401 and no standalone product text. The target was retrieved separately."
+  }
+}

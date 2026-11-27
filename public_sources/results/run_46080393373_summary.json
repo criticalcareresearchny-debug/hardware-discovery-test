@@ -1,0 +1,48 @@
+{
+  "repository": "criticalcareresearchny-debug/hardware-discovery-test",
+  "branch": "supplement/public-evidence-index-20261127",
+  "source_commit": "07f9b0982065741e0e538fa78185c74cb8ec6bbe",
+  "run_id": 46080393373,
+  "run_url": "https://github.com/criticalcareresearchny-debug/hardware-discovery-test/actions/runs/46080393373",
+  "run_status": "completed",
+  "run_conclusion": "success",
+  "started_utc": "2026-11-27T23:04:34Z",
+  "completed_utc": "2026-11-27T23:05:02Z",
+  "public_source_count": 16,
+  "public_source_manifest_sha256": "f3e3fbfcb111be8afb83a4d08f8f66369e69a7881b7d534c0bb3a860d34f0f9f",
+  "retrieval_outcomes": {
+    "RETRIEVED": 14,
+    "SKIPPED_ROBOTS_OR_ROBOTS_UNAVAILABLE": 1,
+    "HTTP_404": 1
+  },
+  "reviewed_content_classes": {
+    "SOURCE_CODE_AVAILABLE_FOR_REVIEW": 2,
+    "ERROR_OR_ACCESS_PAGE": 1,
+    "NOT_RETRIEVED": 2,
+    "TEXT_AVAILABLE_FOR_REVIEW": 7,
+    "IMAGE_REQUIRES_VISUAL_REVIEW": 3,
+    "NO_USABLE_TEXT": 1
+  },
+  "raw_extracted_page_count": 18,
+  "engineering_acceptance_performed": false,
+  "interpretation": "Preserved responses and extracted text require source-specific human review before any engineering or identity claim.",
+  "validation": {
+    "hosted_provenance_and_content_tests": 14,
+    "hosted_job_count": 1,
+    "artifact_zip_digest_verified": true,
+    "source_or_extraction_hash_mismatches": 0
+  },
+  "content_review_provenance": "Automatic audit ran on GitHub Actions; two public response-content observations were added locally without modifying original bytes.",
+  "public_content_observations_sha256": "8c47c740517a0d953584c567bedc91719824cb069155b89f3334656907d8360b",
+  "dependency_warning": "GitHub reported Node.js 20 deprecation for actions/checkout@v4 and actions/upload-artifact@v4, forcing Node.js 24. The job succeeded.",
+  "artifacts": [
+    {
+      "id": 15236577077,
+      "name": "supplementary-public-followup-46080393373",
+      "bytes": 4588413,
+      "digest": "sha256:e8574d1be32d8b91f535610bc1ee5bfa9d567cf44b1fc6dc7461c1f963dbbd71",
+      "expires_at": "2026-12-04T23:04:55Z"
+    }
+  ],
+  "content_audit_script_sha256": "da3ad95cf1379b11a5bd3250bf803e4e0bbba28d59e30a63d46e8724cd7c8d84"
+}
