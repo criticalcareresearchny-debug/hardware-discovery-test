@@ -1,0 +1,71 @@
+name: Public instrument documentary verification
+on:
+  push:
+    branches: [supplement/public-instrument-verification-20261127]
+    paths:
+      - '.github/workflows/public-instrument-document-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-public-documents:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Retrieve primary public documents and verify textual anchors
+        shell: bash
+        run: |
+          mkdir -p evidence
+          python3 - <<'PY'
+          import concurrent.futures, datetime, hashlib, json, pathlib, re, subprocess, urllib.request
+          from html.parser import HTMLParser
+          class TextParser(HTMLParser):
+              def __init__(self): super().__init__(); self.parts=[]
+              def handle_data(self, data): self.parts.append(data)
+          sources=[
+              ("ionicon_study","https://link.springer.com/article/10.1007/s00216-020-02846-8",["PTR-TOF 1000","ion funnel","2017"]),
+              ("ionicon_oem","https://www.ionicon.com/news/detail/ptr-tof-1000-ultra-2020-performance-boost-and-new-x2-option",["1000","ultra","2020"]),
+              ("cnt_study","https://citeseerx.ist.psu.edu/document?doi=ad4dfd69ff9b1ca8fdf07e7b758f5384b765937a&repid=rep1&type=pdf",["nanotube","Ni","Au"]),
+              ("cnt_index","https://pubmed.ncbi.nlm.nih.gov/10649989/",["nanotube","gas"]),
+              ("diamond_study","https://web.mit.edu/pcappell/www/pubs/Maze08.pdf",["nanocrystal","380","34"]),
+              ("heritage_study","https://www.mdpi.com/1424-8220/26/15/4941",["ARGUS","MKR","SEN0193"]),
+              ("neuromorphic_oem","https://www.general-vision.com/",["NM5500","AX5500","BGA"]),
+              ("neuromorphic_supplier","https://www.alfaplus.com.tw/index.php?c=article&id=133",["AX5500","5508"]),
+              ("ion_membrane_manual","https://www.mt.com/dam/product-documents/process-analytics/30328314%20DX%20series_print.pdf",["51340009","51340007","51340011","51340012","51107694","51107686","51340006","51107689"]),
+              ("mox_oem","https://www.nanoz.ai/nzgs-2-en.html",["NZGS2","QFN"]),
+              ("event_camera_oem","https://en.ids-imaging.com/store/ue-39b1xls-e.html",["IMX636","39B1XLS"]),
+              ("memristor_oem","https://knowm.com/products/w-sdc-memristor-crossbars",["32","64","crossbar"]),
+              ("capillary_oem","https://genereach.com/index.php?action=view&func=product&product_no=12",["R-tube"]),
+              ("fish_xist","https://biosearchassets.biosearchtech.com/assetsv6/smf-2038-1.pdf",["XIST","SMF-2038-1"]),
+              ("fish_malat1","https://www.primetech.co.jp/Portals/0/db/product/LGC/biosearch/Stellaris_Product_Info_Sheets/smf-2035-1.pdf",["MALAT1","SMF-2035-1"])
+          ]
+          def run(item):
+              name,url,terms=item
+              result={"name":name,"url":url,"checked_utc":datetime.datetime.now(datetime.timezone.utc).isoformat()}
+              try:
+                  request=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 (compatible; public-document-check/1.0)"})
+                  with urllib.request.urlopen(request,timeout=35) as resp:
+                      raw=resp.read(25000001); result.update(http_status=resp.status,final_url=resp.url,content_type=resp.headers.get("Content-Type",""))
+                  if len(raw)>25000000: raise ValueError("document exceeds 25 MB")
+                  is_pdf=raw.startswith(b"%PDF-"); p=pathlib.Path("evidence")/(name+(".pdf" if is_pdf else ".html"))
+                  p.write_bytes(raw); result.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest(),raw_file=str(p))
+                  if is_pdf:
+                      proc=subprocess.run(["pdftotext","-layout",str(p),"-"],capture_output=True,check=True,timeout=45); text=proc.stdout.decode("utf-8","replace")
+                  else:
+                      parser=TextParser();parser.feed(raw.decode("utf-8","replace"));text=" ".join(parser.parts)
+                  text_path=pathlib.Path("evidence")/(name+".txt");text_path.write_text(text,encoding="utf-8")
+                  normalized=re.sub(r"\\s+"," ",text).casefold()
+                  result.update(text_chars=len(text),text_sha256=hashlib.sha256(text.encode()).hexdigest(),anchor_hits={t:t.casefold() in normalized for t in terms},text_file=str(text_path))
+              except Exception as ex: result["error"]=str(ex)
+              return result
+          with concurrent.futures.ThreadPoolExecutor(max_workers=5) as pool: results=list(pool.map(run,sources))
+          pathlib.Path("evidence/receipt.json").write_text(json.dumps(results,indent=2))
+          for r in results: print(json.dumps({k:v for k,v in r.items() if k!="text_file"}))
+          print("Retrieval and literal-text anchors only; no scientific identity or eligibility certification.")
+          PY
+      - name: Upload public evidence receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-instrument-document-check-${{ github.run_id }}
+          path: evidence/
+          retention-days: 14
