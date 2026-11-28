@@ -27,19 +27,15 @@ jobs:
               def __init__(self): super().__init__(); self.parts=[]
               def handle_data(self, data): self.parts.append(data)
           sources=[
-              ("cnt_full","https://usjgofs.whoi.edu/mzweb/caldeira.pdf",["nanotube"]),
-              ("cnt_stanford","https://nanolab.usc.edu/publications/2000-2/",["nanotube"]),
-              ("heritage_pdf","https://www.mdpi.com/1424-8220/26/15/4941/pdf",["ARGUS"]),
-              ("heritage_html","https://www.mdpi.com/1424-8220/26/15/4941",["ARGUS","SEN0193"]),
-              ("lotek_manual","https://www.lotek.com/wp-content/uploads/2020/08/SRX1200-Host-User-Guide_Rev-2.pdf",["SRX1200"]),
-              ("lotek_specs","https://www.lotek.com/wp-content/uploads/2024/10/SRX1200-Receivers-Spec-Sheet.pdf",["SRX1200"]),
-              ("metrohm_reference","https://www.metrohm.com/content/dam/metrohm/shared/documents/fact-sheets/81098042EN.pdf",["membrane"]),
-              ("nzgs2","https://www.nanoz.ai/nzgs-2-en.html",["NZGS2","QFN"]),
-              ("genereach","https://www.genereach.com/index.php?action=view&func=product&product_no=12",["R-tube"]),
-              ("memristor_board","https://knowm.com/products/w-sdc-memristor-crossbars",["32","64","crossbar"]),
-              ("gv_products","https://www.general-vision.com/",["NM5500","AX5500","BGA"]),
-              ("malat1_oem","https://biosearchassets.biosearchtech.com/assetsv6/smf-2035-1.pdf",["MALAT1"]),
-              ("neat1_oem","https://biosearchassets.biosearchtech.com/assetsv6/smf-2037-1.pdf",["NEAT1"])
+              ("kong_author_pdf","https://nanolab.usc.edu/files/2018/03/87444-2duvqsx.pdf",["nanotube"]),
+              ("ax5500_photo","https://www.alfaplus.com.tw/uploads/2024/05/1715050580.png",[]),
+              ("argus_figure","https://mdpi-res.com/sensors/sensors-26-04941/article_deploy/html/images/sensors-26-04941-g004-550.jpg",[]),
+              ("argus_pdf_static","https://mdpi-res.com/sensors/sensors-26-04941/article_deploy/sensors-26-04941.pdf",["ARGUS"]),
+              ("genereach_tw","https://www.genereach.com/tw/index.php?action=view&func=product&product_no=12",["R-tube"]),
+              ("genereach_published","https://www.genereach.com/data/document%20download/common/Products/Scientific%20Publications/2013_Detection%20of%20Salmonella%20in%20Chicken%20Meat%20by%20Insulated%20Isothermal%20PCR.pdf",["R-tube"]),
+              ("probe_catalogue","https://oligos.biosearchtech.com/products/rna-fish/shipready-stellaris-probe-sets",["SMF-2035-1","SMF-2037-1","SMF-2038-1"]),
+              ("nzgs2_faq","https://www.nanoz.ai/faq-en.html",["NZGS","TSR"]),
+              ("tsr_india","https://www.tsr-india.com/news",["TSR","NANOZ"])
           ]
           def run(item):
               name,url,terms=item
@@ -49,8 +45,9 @@ jobs:
                   with urllib.request.urlopen(request,timeout=35) as resp:
                       raw=resp.read(25000001); result.update(http_status=resp.status,final_url=resp.url,content_type=resp.headers.get("Content-Type",""))
                   if len(raw)>25000000: raise ValueError("document exceeds 25 MB")
-                  is_pdf=raw.startswith(b"%PDF-"); p=pathlib.Path("evidence")/(name+(".pdf" if is_pdf else ".html"))
+                  is_pdf=raw.startswith(b"%PDF-"); is_image=raw.startswith(b"\x89PNG") or raw.startswith(b"\xff\xd8"); p=pathlib.Path("evidence")/(name+(".pdf" if is_pdf else ".png" if raw.startswith(b"\x89PNG") else ".jpg" if is_image else ".html"))
                   p.write_bytes(raw); result.update(bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest(),raw_file=str(p))
+                  if is_image: result["image_status"]="RAW_IMAGE_FOR_LOCAL_REVIEW"; return result
                   if is_pdf:
                       result["pdf_parse_status"]="RAW_PDF_SAVED_FOR_LOCAL_VISUAL_AND_TEXT_REVIEW"; return result
                   else:
