@@ -4,6 +4,10 @@ on:
     branches: [supplement/public-instrument-verification-20261127]
     paths:
       - '.github/workflows/public-instrument-document-check.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/public-instrument-document-check.yml'
   workflow_dispatch:
 permissions:
   contents: read
